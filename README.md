@@ -1,8 +1,8 @@
-# step-lively
+# steplively
 An application for sensor measurement
 
 ## Licensing
-step-lively is an application for sensor measurement 
+steplively is an application for sensor measurement 
 Copyright (C) 2018 Cleveland State University
 
 This program is free software: you can redistribute it and/or modify
