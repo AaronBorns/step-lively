@@ -16,7 +16,6 @@
 #
 Step Lively Copyright (C) 2018 Cleveland State University
 This program comes with ABSOLUTELY NO WARRANTY; for details type 'w'.
-This is free software, and you are welcome to redistribute it
-under certain conditions; type 'c' for details.
+This is free software, and you are welcome to redistribute it under certain conditions; type 'c' for details.
 
 If you accept these terms, press the space bar; press any other key to exit.

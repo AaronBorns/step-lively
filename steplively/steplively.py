@@ -21,7 +21,7 @@ def warranty():
     print(parse.get_uncommented_text('./assets/warranty.txt'))
 
 def conditions():
-    print(parse.get_uncommented_text('./COPYING.txt'))
+    print(parse.get_uncommented_text('../COPYING'))
 
 def goodbye():
     print(parse.get_uncommented_text('./assets/goodbye.txt'))
