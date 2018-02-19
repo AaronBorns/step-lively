@@ -1,4 +1,4 @@
-#    step-lively is an application for sensor measurement 
+#    steplively is an application for sensor measurement 
 #    Copyright (C) 2018 Cleveland State University
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -13,15 +13,9 @@
 #
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-An excerpt from the GPLv3 license found in COPYING.txt...
+#
+Step Lively Copyright (C) 2018 Cleveland State University
+This program comes with ABSOLUTELY NO WARRANTY; for details type 'w'.
+This is free software, and you are welcome to redistribute it under certain conditions; type 'c' for details.
 
-  15. Disclaimer of Warranty.
-
-  THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
-APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
-HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY
-OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
-THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
-PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM
-IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
-ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+If you accept these terms, press the space bar; press any other key to exit.
