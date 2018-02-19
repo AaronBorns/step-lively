@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup
 
 setup(
   name = 'steplively',
@@ -9,6 +9,5 @@ setup(
   author_email = 'aborns@outlook.com',
   url = 'https://github.com/AaronBorns/steplively',
   keywords = ['sensor', 'measurement', 'data aquisition','daq'],
-  scripts=['bin/steplively'],
   classifiers = []
 )
