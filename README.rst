@@ -6,7 +6,7 @@ An application for sensor measurement
 Licensing
 ---------
 
-steplively is an application for sensor measurement
+steplively - an application for sensor measurement
 
 Copyright (C) 2018 Cleveland State University
 
