@@ -16,13 +16,12 @@
 if __name__ == "__main__": 
     import helpers as h
 
-    print(h.get_uncommented_text('./assets/splash.txt'))
-    user_key_pressed = h.wait_for_key_press(h.get_uncommented_text('./assets/instructions.txt'))
-    print('\n')
-
     user_choices = {'w': h.warranty, 'c': h.conditions, ' ': h.run}
 
-    try:
-        user_choices[user_key_pressed]()
-    finally:
-        h.goodbye()
+    user_choice = h.prompt_for_user_choice()
+    try: 
+        user_choices[user_choice]()
+    except Exception: 
+        pass
+    
+    h.goodbye()

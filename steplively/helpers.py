@@ -19,6 +19,15 @@ import numpy.core.function_base
 import sys
 import os
 
+def prompt_for_user_choice():
+    print(get_uncommented_text('./assets/splash.txt'))
+    try:
+        user_key_pressed = wait_for_key_press(get_uncommented_text('./assets/instructions.txt'))
+    except Exception:
+        user_key_pressed = '~'
+    print('\n')
+    return user_key_pressed
+
 def warranty():
     print(get_uncommented_text('./assets/warranty.txt'))
 
@@ -44,7 +53,7 @@ def wait_for_key_press(message):
     if os.name == 'nt':
         import msvcrt
         try:
-            key_pressed = msvcrt.getch().decode('UTF-8')
+            key_pressed = msvcrt.getch().decode('utf-8')
         except Exception:
             key_pressed = msvcrt.getch()
     else:
