@@ -13,4 +13,14 @@
 #
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-import steplively
+if __name__ == "__main__": 
+    import helpers as h
+
+    user_choices = {'w': h.warranty, 'c': h.conditions, ' ': lambda:None}
+    user_choice = ''
+    while (user_choice != ' '):
+        user_choice = h.prompt_for_user_choice()
+        user_choices.get(user_choice, h.quit)()
+
+    h.plot_sine_wave()
+    h.goodbye()
