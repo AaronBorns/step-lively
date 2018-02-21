@@ -14,7 +14,28 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-import sys, os
+import matplotlib.pyplot
+import numpy.core.function_base
+import sys
+import os
+
+def warranty():
+    print(get_uncommented_text('./assets/warranty.txt'))
+
+def conditions():
+    print(get_uncommented_text('../COPYING'))
+
+def goodbye():
+    print(get_uncommented_text('./assets/goodbye.txt'))
+    exit(0)
+
+def run():
+    plot_sine_wave()
+
+def plot_sine_wave():
+    x = numpy.linspace(0, 20, 100)
+    matplotlib.pyplot.plot(x, numpy.sin(x))
+    matplotlib.pyplot.show()
 
 # prints the message without a new line, and waits for any cross-platform key press
 def wait_for_key_press(message):

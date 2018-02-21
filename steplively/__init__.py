@@ -13,4 +13,16 @@
 #
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-import steplively
+if __name__ == "__main__": 
+    import helpers as h
+
+    print(h.get_uncommented_text('./assets/splash.txt'))
+    user_key_pressed = h.wait_for_key_press(h.get_uncommented_text('./assets/instructions.txt'))
+    print('\n')
+
+    user_choices = {'w': h.warranty, 'c': h.conditions, ' ': h.run}
+
+    try:
+        user_choices[user_key_pressed]()
+    finally:
+        h.goodbye()
