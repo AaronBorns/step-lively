@@ -20,7 +20,7 @@ if __name__ == "__main__":
     user_choice = ''
     while (user_choice != ' '):
         user_choice = h.prompt_for_user_choice()
-        user_choices.get(user_choice, h.goodbye)()
+        user_choices.get(user_choice, h.quit)()
 
     h.plot_sine_wave()
     h.goodbye()

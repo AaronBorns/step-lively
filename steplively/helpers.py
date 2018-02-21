@@ -18,24 +18,90 @@ import matplotlib.pyplot
 import numpy.core.function_base
 import sys
 import os
+import textwrap
+from os import path
+
+splash = textwrap.dedent(
+    """
+
+    Welcome to
+      ______     __                                __        __                       __           
+     /      \   /  |                              /  |      /  |                     /  |          
+    /$$$$$$  | _$$ |_     ______    ______        $$ |      $$/  __     __   ______  $$ | __    __ 
+    $$ \__$$/ / $$   |   /      \  /      \       $$ |      /  |/  \   /  | /      \ $$ |/  |  /  |
+    $$      \ $$$$$$/   /$$$$$$  |/$$$$$$  |      $$ |      $$ |$$  \ /$$/ /$$$$$$  |$$ |$$ |  $$ |
+     $$$$$$  |  $$ | __ $$    $$ |$$ |  $$ |      $$ |      $$ | $$  /$$/  $$    $$ |$$ |$$ |  $$ |
+    /  \__$$ |  $$ |/  |$$$$$$$$/ $$ |__$$ |      $$ |_____ $$ |  $$ $$/   $$$$$$$$/ $$ |$$ \__$$ |
+    $$    $$/   $$  $$/ $$       |$$    $$/       $$       |$$ |   $$$/    $$       |$$ |$$    $$ |
+     $$$$$$/     $$$$/   $$$$$$$/ $$$$$$$/        $$$$$$$$/ $$/     $/      $$$$$$$/ $$/  $$$$$$$ |
+                                  $$ |                                                   /  \__$$ |
+                                  $$ |                                                   $$    $$/ 
+                                  $$/                                                     $$$$$$/  
+    
+    """
+)
+
+instructions = textwrap.dedent(
+    """
+    Step Lively Copyright (C) 2018 Cleveland State University
+    This program comes with ABSOLUTELY NO WARRANTY; for details type 'w'.
+    This is free software, and you are welcome to redistribute it under certain conditions; type 'c' for details.
+
+    If you accept these terms, press the space bar; press any other key to exit."""
+)
+license_excerpt = textwrap.dedent(
+    """
+    An excerpt from the GPLv3 license found in COPYING.txt...
+
+        15. Disclaimer of Warranty.
+
+    THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
+    APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
+    HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY
+    OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
+    THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+    PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM
+    IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
+    ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+    """
+)
+
+goodbye = textwrap.dedent(
+    """
+    Thank you for using Step Lively!
+
+    From the Step Lively team:
+    * Dr. Dan Simon - http://academic.csuohio.edu/simond/
+    * Mohamed Abdelhady
+    * Mike Stojsavljevic
+    * Xavier Williams
+    * Joe Ayoub
+    * Aaron Borns - https://www.linkedin.com/in/aaron-borns/
+
+    """
+)
+
+with open(path.join(path.abspath(path.dirname(__file__)), '..', 'COPYING'), encoding='utf-8') as license_file:
+    license = license_file.read()
 
 def prompt_for_user_choice():
-    print(get_uncommented_text('./assets/splash.txt'))
+    print(splash)
     try:
-        user_key_pressed = wait_for_key_press(get_uncommented_text('./assets/instructions.txt'))
+        user_key_pressed = wait_for_key_press(instructions)
     except Exception:
         user_key_pressed = '~'
     print('\n')
     return user_key_pressed
 
 def warranty():
-    print(get_uncommented_text('./assets/warranty.txt'))
+    print(license_excerpt)
 
 def conditions():
-    print(get_uncommented_text('../COPYING'))
+    print(license)
 
-def goodbye():
-    print(get_uncommented_text('./assets/goodbye.txt'))
+def quit():
+    print(goodbye)
     exit(0)
 
 def plot_sine_wave():
@@ -70,12 +136,3 @@ def wait_for_key_press(message):
             termios.tcsetattr(fd, termios.TCSAFLUSH, oldterm)
 
     return key_pressed
-
-# returns text of a specified file for any uncommented (#) lines
-def get_uncommented_text(file):
-    msg = ''
-    for line in open(file, 'r'):
-        if line.startswith('#'):
-            continue
-        msg += line
-    return msg
