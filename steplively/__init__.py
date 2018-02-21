@@ -16,12 +16,11 @@
 if __name__ == "__main__": 
     import helpers as h
 
-    user_choices = {'w': h.warranty, 'c': h.conditions, ' ': h.run}
+    user_choices = {'w': h.warranty, 'c': h.conditions, ' ': lambda:None}
+    user_choice = ''
+    while (user_choice != ' '):
+        user_choice = h.prompt_for_user_choice()
+        user_choices.get(user_choice, h.goodbye)()
 
-    user_choice = h.prompt_for_user_choice()
-    try: 
-        user_choices[user_choice]()
-    except Exception: 
-        pass
-    
+    h.plot_sine_wave()
     h.goodbye()

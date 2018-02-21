@@ -38,9 +38,6 @@ def goodbye():
     print(get_uncommented_text('./assets/goodbye.txt'))
     exit(0)
 
-def run():
-    plot_sine_wave()
-
 def plot_sine_wave():
     x = numpy.linspace(0, 20, 100)
     matplotlib.pyplot.plot(x, numpy.sin(x))
