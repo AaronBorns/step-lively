@@ -19,7 +19,6 @@ import numpy.core.function_base
 import sys
 import os
 import textwrap
-from os import path
 
 splash = textwrap.dedent(
     """
@@ -43,7 +42,7 @@ splash = textwrap.dedent(
 
 instructions = textwrap.dedent(
     """
-    Step Lively Copyright (C) 2018 Cleveland State University
+    Step Lively Copyright (C) 2018 the Step Lively team
     This program comes with ABSOLUTELY NO WARRANTY; for details type 'w'.
     This is free software, and you are welcome to redistribute it under certain conditions; type 'c' for details.
 
@@ -67,7 +66,7 @@ license_excerpt = textwrap.dedent(
     """
 )
 
-goodbye = textwrap.dedent(
+closing = textwrap.dedent(
     """
     Thank you for using Step Lively!
 
@@ -81,12 +80,8 @@ goodbye = textwrap.dedent(
 
     """
 )
-
-with open(path.join(path.abspath(path.dirname(__file__)), '..', 'COPYING'), encoding='utf-8') as license_file:
-    license = license_file.read()
-
+    
 def prompt_for_user_choice():
-    print(splash)
     try:
         user_key_pressed = wait_for_key_press(instructions)
     except Exception:
@@ -94,14 +89,17 @@ def prompt_for_user_choice():
     print('\n')
     return user_key_pressed
 
+def hello():
+    print(splash)
+
 def warranty():
     print(license_excerpt)
 
 def conditions():
-    print(license)
+    print('TODO: Add license file to pip install')
 
-def quit():
-    print(goodbye)
+def goodbye():
+    print(closing)
     exit(0)
 
 def plot_sine_wave():
